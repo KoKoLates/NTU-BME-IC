@@ -13,6 +13,7 @@ You are going to define your own membership functions, rules and design the prog
 ---
 
 **version1** <br>
+|1|2|
 |:-----------------------:|:-----------------------:|
 |![image](./img/v1-1.png) | ![image](./img/v1-2.png)|
 
