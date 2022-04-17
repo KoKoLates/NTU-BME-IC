@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import make_interp_spline
 
-
+# Activation Funciton
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -10,7 +10,7 @@ def sigmoid(x):
 def prime_sigmoid(x):
     return x * (1 - x)
 
-
+# Neural Netwowrk Model
 def neural_network(epochs, eta):
     x = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     t = np.array([[0], [1], [1], [0]])
