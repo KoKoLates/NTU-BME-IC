@@ -13,25 +13,17 @@ You are going to define your own membership functions, rules and design the prog
 ---
 
 **version1** <br>
-![image](./img/v1-1.png)![image](./img/v1-2.png)
+<center class="half">
+    <img src="./img/v1-1.png" height="200"/> <img src="./img/v1-2.png" height="200"/>
+</center>
 
 **version2**<br>
-![image](./img/v2-1.png)![image](./img/v2-2.png)
-
-In the performance surface of v1 and v2, ones could easily find out it doesn’t make sense, due to the dry soil moisture doesn’t according to the highest watering time in soil moisture axes. Thus, I just try to adjust the membership function so that the highest watering time could move to the driest situation. Besides, from v1 and v2 plots, ones could observe that as the overlapping area increase between dry and moist membership function the highest time will increase also toward the dry direction. 
-
-**<center>Rule table</center>**
-
-<center>
-
-|    | Cold | Cool | Normal | Warm | Hot |
-|:----|:------:|:------:|:--------:|:------:|:-----:|
-|**Dry** |	medium | medium | long | long |	long|
-|**Moist** |short|short|medium|	medium|	long
-|**Wet** |short|	short|	short|	medium|	medium|
-
+<center class="half">
+    <img src="./img/v2-1.png" height="200"/> <img src="./img/v2-2.png" height="200"/>
 </center>
 <br>
+In the performance surface of v1 and v2, ones could easily find out it doesn’t make sense, due to the dry soil moisture doesn’t according to the highest watering time in soil moisture axes. Thus, I just try to adjust the membership function so that the highest watering time could move to the driest situation. Besides, from v1 and v2 plots, ones could observe that as the overlapping area increase between dry and moist membership function the highest time will increase also toward the dry direction. 
+
 
 
 
