@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from scipy.interpolate import make_interp_spline
 
-
+# Activation Function
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -10,7 +10,7 @@ def sigmoid(x):
 def prime_sigmoid(x):
     return x * (1 - x)
 
-
+# Neural Network Model
 def neural_network(epochs, eta):
     x = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     t = np.array([[0], [1], [1], [0]])
@@ -43,15 +43,8 @@ def neural_network(epochs, eta):
         out_bias += np.sum(difference_value, 0, keepdims=True) * eta
         hidden_weights += x.T.dot(hidden_layer) * eta
         hidden_bias += np.sum(hidden_layer, 0, keepdims=True) * eta
-
-    # h_input = np.dot(x, hidden_weights)
-    # h_input += hidden_bias
-    # h_output = sigmoid(h_input)
-    #
-    # y_input = np.dot(h_output, out_weights)
-    # y_input += out_bias
-    # y_output = sigmoid(y_input)
-
+       
+    
     # model = make_interp_spline(list(range(1, epochs + 1)), data)
     # xs = np.linspace(1, epochs)
     # ys = model(xs)
