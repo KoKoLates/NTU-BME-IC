@@ -13,7 +13,7 @@ You are going to define your own membership functions, rules and design the prog
 ---
 
 **version1** <br>
-<center><img src="./img/v1-1.png"/><img src="./img/v1-2.png"></center>
+<center><img src="./img/v1-1.png" width="200"/><img src="./img/v1-2.png" width="200"/></center>
 
 **version2**<br>
 <center>
