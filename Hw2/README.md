@@ -5,10 +5,10 @@ You are going to define your own membership functions, rules and design the prog
 * Outputs make sense
 * Rules identify desired behavior
 * Labels have correct shape and overlap by exhaustively various input combinations:<br>
-    1. At extreme ends of universe of discourse
-    2. At extreme ends of the individual M.F.’s domain
+    1. At extreme ends of universe of discourse.
+    2. At extreme ends of the individual M.F.’s domain.
     3. Corresponding to the overlap of M.F.
-    4. With some degree of truth in as many antecedents as possible
+    4. With some degree of truth in as many antecedents as possible.
 
 ---
 
