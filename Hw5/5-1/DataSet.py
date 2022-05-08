@@ -21,7 +21,3 @@ class DataSet:
         return (self.x_Test, self.y_Test), (self.x_Test_4D_normalize, self.y_Test_OneHot)
 
 
-data = DataSet()
-x_train, y_train = data.train_data()
-(x_test, y_test), (x_test_processed, y_test_processed) = data.test_date()
-
