@@ -11,7 +11,7 @@ class Test:
     def __init__(self, model):
         self.model = model
         data = DataSet.DataSet()
-        (self.x_test, self.y_test), (self.x_test_processed, self.y_test_processed) = data.test_date()
+        (self.x_test, self.y_test), (self.x_test_processed, self.y_test_processed) = data.get_test_data()
         self.predictions = np.argmax(self.model.predict(self.x_test), 1)
 
     def score(self):
@@ -19,6 +19,18 @@ class Test:
         print('Accuracy -> {}'.format(scores[1]))
 
     def predictions(self):
+        labels_dictionary = {
+            0: 'airplane',
+            1: 'automobile',
+            2: 'bird',
+            3: 'cat',
+            4: 'deer',
+            5: 'dog',
+            6: 'frog',
+            7: 'horse',
+            8: 'ship',
+            9: 'truck'}
+
         def plot_predictions(images, labels, prediction, index, num):
             fig = plt.gcf()
             fig.set_size_inches(12, 14)
@@ -28,8 +40,11 @@ class Test:
             for i in range(0, num):
                 ax = plt.subplot(5, 5, 1 + i)
                 ax.imshow(images[index], cmap='binary')
-                ax.set_title('label:{} / predict:{}'.format(str(labels[index]), str(prediction[index])), fontsize=9)
-                ax.set_xticks([])
+                title = str(i) + ',' + labels_dictionary[labels[i][0]]
+                if len(prediction) > 0:
+                    title += '->' + labels_dictionary[prediction[i]]
+                ax.set_title(title, fontsize=10)
+                ax.set_xticks([]);
                 ax.set_yticks([])
                 index += 1
 
@@ -38,7 +53,7 @@ class Test:
         plot_predictions(self.x_test, self.y_test, self.predictions, 0, 10)
 
     def confusion_matrix(self):
-        label_name = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        label_name = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
         df_cm = pd.DataFrame(confusion_matrix(self.y_test, self.predictions), index=label_name, columns=label_name)
         fig = plt.figure(figsize=(10, 7))
         try:
@@ -54,8 +69,8 @@ class Test:
 
 
 def main():
-    model = keras.models.load_model('202205061402.h5')
-    test = Test(model)
+    models = keras.models.load_model('model.h5')
+    test = Test(models)
     test.confusion_matrix()
     # test.score()
     # test.predictions()
