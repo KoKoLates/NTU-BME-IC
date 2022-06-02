@@ -66,6 +66,7 @@ class Model:
 
     # Training
     def train(self):
+
         now = datetime.now()
         self.dt_string = now.strftime("%Y%m%d%H%M")
         opt = keras.optimizers.Adam(learning_rate=0.001)
